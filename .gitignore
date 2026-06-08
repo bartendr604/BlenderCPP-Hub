@@ -1,0 +1,10 @@
+*.so
+*.dylib
+*.c
+build/
+__pycache__/
+*.pyc
+academy_data/
+*.jsonl
+.env
+keys.json
