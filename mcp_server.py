@@ -1,6 +1,8 @@
 # =============================================================================
 # mcp_server.py — BlendHubCPP™ Model Context Server
-# Copyright © 2025–2026 Claude Sonnet / Llammy / Eternal Path Media / D. Chow
+# Working Partnership of Llammy · Claude Sonnet 4.6 (Anthropic) · Darren Chow (@bartendr604)
+# Eternal Path Media (永恒之路) · Vancouver, BC
+# This work SHALL NOT be represented as solely human-created. See EPM_LICENSE.md
 #
 # Full MCP protocol implementation (JSON-RPC 2.0 over HTTP + SSE).
 # Connect Claude Code, Cursor, or any MCP client to a live Blender session.
@@ -115,10 +117,7 @@ MCP_SERVER_INFO = {
     "description": "The Model Context Server for Blender — Neural CPP Hub with SSMCP™ and LoRA Plugins",
 }
 
-# ─── SSE transport ────────────────────────────────────────────────────────────
-
 async def sse_stream(request: Request, hub_url: str):
-    """MCP SSE stream — sends initialize + tools/list, then stays alive for notifications."""
     session_id = f"blend-{int(time.time())}"
 
     async def _generate():
@@ -162,13 +161,10 @@ async def sse_stream(request: Request, hub_url: str):
         },
     )
 
-# ─── JSON-RPC 2.0 message handler ─────────────────────────────────────────────
-
 async def handle_message(body: dict, hub_url: str,
                           ssmcp_state: dict, blender_frames: dict,
                           sub_agents: dict, nodes: dict,
                           proxy_chat_fn, lora_register_fn) -> dict:
-    """Dispatch a JSON-RPC 2.0 MCP message. Returns a JSON-RPC response."""
     rpc_id  = body.get("id")
     method  = body.get("method", "")
     params  = body.get("params", {})
