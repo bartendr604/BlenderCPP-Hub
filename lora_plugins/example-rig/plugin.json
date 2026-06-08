@@ -1,0 +1,10 @@
+{
+  "name": "example-rig",
+  "version": "1.0.0",
+  "base": "hf.co/bartendr604/EPM-LLAMMY.Blend.3b:Q5_K_M",
+  "description": "Example LoRA plugin — replace adapter.gguf with your fine-tuned adapter",
+  "tags": ["rig", "example", "template"],
+  "author": "Eternal Path Media",
+  "blender_version": "5.2",
+  "notes": "Drop your .gguf file in this directory. GET /lora/plugins to list it. POST /lora/plugins/load to register it."
+}
