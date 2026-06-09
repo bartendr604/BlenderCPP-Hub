@@ -342,8 +342,8 @@ class CPP_OT_AskAgent(bpy.types.Operator):
                 text = buf.value.decode()[:300]
             telem_record("agent_query", {
                 "agent":    self.agent,
-                "query":    self.message[:200],
-                "response": text[:200],
+                "query":    self.message[:4000],
+                "response": text[:4000],
                 "success":  True,
             })
             self.report({'INFO'}, text[:250])
