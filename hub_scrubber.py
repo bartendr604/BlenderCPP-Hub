@@ -9,6 +9,8 @@
 # IP addresses, user-defined object names (replaced with stable tokens).
 # =============================================================================
 
+from __future__ import annotations  # tuple[...] hints need this on Python 3.8 (Pro)
+
 import re
 import hashlib
 import os
