@@ -165,7 +165,7 @@ Most Blender AI integrations — including the official Blender MCP — are stat
 
 **SSMCP™ — persistent neural state.** The Solid State Memory Context Protocol maintains Mamba3 SSM state across sessions via a dedicated neural bridge (port 19993). Your AI remembers the rig, the character, the decisions from the last session — not just the current prompt.
 
-**Conscience-aware AI.** Llammy isn't a generic LLM pointed at Blender. It's a purpose-built creative partner with two years of Blender production context, a persistent conscience DB, and a character system tuned to the *Whispers of the Eternal Path* pipeline. It knows who Xiaohan is.
+**Conscience-aware AI.** Llammy isn't a generic LLM pointed at Blender. It's a purpose-built creative partner with a persistent conscience DB, a growing production-context memory built since December 2025, and a character system tuned to the *Whispers of the Eternal Path* pipeline. It knows who Xiaohan is.
 
 **Live runtime, not documentation.** Scene state, bone matrices, and bpy API queries hit the actual running Blender session — not a snapshot or static docs. The C++ core streams bone transforms at native speed via a UDP ring buffer.
 
